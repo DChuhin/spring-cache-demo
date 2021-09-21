@@ -10,11 +10,25 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/users")
 public class UserController {
 
-    private final UserCrud userService;
+    private final UserCrud userCrud;
 
     @GetMapping("/{id}")
     public User get(@PathVariable String id) {
-        return userService.read(id);
+        return userCrud.read(id);
     }
 
+    @PostMapping("/")
+    public User update(@RequestBody User user) {
+        return userCrud.update(user);
+    }
+
+    @PostMapping("/create")
+    public User create(@RequestBody User user) {
+        return userCrud.create(user);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable String id) {
+        userCrud.delete(id);
+    }
 }
