@@ -3,6 +3,7 @@ package com.example.springcachedemo.api;
 import com.example.springcachedemo.repository.User;
 import com.example.springcachedemo.service.UserCrud;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -23,6 +24,7 @@ public class UserController {
     }
 
     @PostMapping("/create")
+    @ResponseStatus(HttpStatus.CREATED)
     public User create(@RequestBody User user) {
         return userCrud.create(user);
     }

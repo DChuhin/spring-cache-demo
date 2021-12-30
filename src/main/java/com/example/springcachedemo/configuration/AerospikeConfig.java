@@ -19,7 +19,7 @@ import org.springframework.data.convert.CustomConversions;
 
 import static java.util.Collections.emptyList;
 
-@Configuration
+// @Configuration
 @Import(value = {AerospikeMappingContext.class, AerospikeTypeAliasAccessor.class})
 @RequiredArgsConstructor
 public class AerospikeConfig {

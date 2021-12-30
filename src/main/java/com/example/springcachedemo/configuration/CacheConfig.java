@@ -26,14 +26,16 @@ public class CacheConfig {
     private static final Duration longCacheTime = Duration.of(1, ChronoUnit.HOURS);
     private static final Duration shortCacheTime = Duration.of(10, ChronoUnit.MINUTES);
 
-    private final AerospikeClient aerospikeClient;
+    // TODO define aerospike cache manager in aerospike config and make conditional on property
+/*    private final AerospikeClient aerospikeClient;
     @Qualifier("customConverter")
-    private final MappingAerospikeConverter mappingAerospikeConverter;
+    private final MappingAerospikeConverter mappingAerospikeConverter;*/
 
     @Primary
     @Bean(name = "longCacheManager")
     public CacheManager longCacheManager() {
-        return new CompositeCacheManager(level1Cache(), level2Cache());
+        // return new CompositeCacheManager(level1Cache(), level2Cache());
+        return level1Cache();
     }
 
     public CacheManager level1Cache() {
@@ -45,10 +47,10 @@ public class CacheConfig {
         return l1Cache;
     }
 
-    public CacheManager level2Cache() {
+/*    public CacheManager level2Cache() {
         AerospikeCacheConfiguration defaultConfiguration = new AerospikeCacheConfiguration("daniil-cache-test");
         return new AerospikeCacheManager(aerospikeClient, mappingAerospikeConverter, defaultConfiguration);
-    }
+    }*/
 
     @Bean(name = "shortCacheManager")
     public CacheManager shortCacheManager() {
