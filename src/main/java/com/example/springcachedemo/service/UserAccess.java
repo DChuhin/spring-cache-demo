@@ -1,10 +1,13 @@
 package com.example.springcachedemo.service;
 
+
 import com.example.springcachedemo.service.model.User;
 
-public interface UserCrud {
+import java.util.Optional;
+
+public interface UserAccess {
+    Optional<User> findById(String id);
     User create(User user);
-    User read(String id);
     User update(User user);
-    void delete(String id);
+    void deleteById(String id);
 }

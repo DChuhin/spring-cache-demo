@@ -1,8 +1,8 @@
-package com.example.springcachedemo.repository;
+package com.example.springcachedemo.repository.mongo;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends MongoRepository<User, String> {
+interface UserMongoRepository extends MongoRepository<UserDocument, String> {
 }

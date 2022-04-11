@@ -26,6 +26,14 @@ dependencies {
     implementation 'io.springfox:springfox-swagger-ui:2.9.2'
     implementation 'com.github.ben-manes.caffeine:caffeine'
     implementation 'com.aerospike:spring-data-aerospike:3.0.0'
+    // GCP
+    implementation platform('com.google.cloud:libraries-bom:22.0.0')
+    implementation 'com.google.cloud:google-cloud-bigtable'
+    implementation 'com.google.cloud:google-cloud-filestore:1.1.1'
+    // Spring GCP
+    implementation platform('org.springframework.cloud:spring-cloud-gcp-dependencies:1.2.8.RELEASE')
+    implementation 'org.springframework.cloud:spring-cloud-gcp-starter-data-firestore'
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

@@ -1,7 +1,7 @@
 package com.example.springcachedemo.api;
 
-import com.example.springcachedemo.repository.User;
 import com.example.springcachedemo.service.UserCrud;
+import com.example.springcachedemo.service.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
